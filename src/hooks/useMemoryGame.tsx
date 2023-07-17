@@ -3,12 +3,23 @@ import { useContext, useEffect, useState } from 'react';
 
 import '../App.css';
 
-import helmetImage from '../images/helmet-1.png';
-import potionImage from '../images/potion-1.png';
-import ringImage from '../images/ring-1.png';
-import scrollImage from '../images/scroll-1.png';
-import shieldImage from '../images/shield-1.png';
-import swordImage from '../images/sword-1.png';
+import Chorollo from '../images/Chorollo.png';
+import Feitan from '../images/Feitan.png';
+import Ging from '../images/Ging.png';
+import Gon from '../images/Gon.png';
+import Hisoka from '../images/Hisoka.png';
+import Illumi from '../images/Illumi.png';
+import Kaito from '../images/Kaito.png';
+import Killua from '../images/Killua.png';
+import Kunkle from '../images/Kunkle.png';
+import Kurapika from '../images/Kurapika.png';
+import Neferupitou from '../images/Neferupitou.png';
+import Netero from '../images/Netero.png';
+import Silva from '../images/Silva.png';
+import Uvogin from '../images/Uvogin.png';
+import Yupi from '../images/Yupi.png';
+import Zeno from '../images/Zeno.png';
+
 import { DifficultyContext } from '../utils/DifficultyContext';
 
 interface Card {
@@ -18,12 +29,22 @@ interface Card {
 }
 
 const cardImages: Card[] = [
-  { src: helmetImage, match: false, id: 1 },
-  { src: potionImage, match: false, id: 2 },
-  { src: ringImage, match: false, id: 3 },
-  { src: scrollImage, match: false, id: 4 },
-  { src: shieldImage, match: false, id: 5 },
-  { src: swordImage, match: false, id: 6 },
+  { src: Chorollo, match: false, id: 1 },
+  { src: Feitan, match: false, id: 2 },
+  { src: Ging, match: false, id: 3 },
+  { src: Gon, match: false, id: 4 },
+  { src: Hisoka, match: false, id: 5 },
+  { src: Illumi, match: false, id: 6 },
+  { src: Kaito, match: false, id: 7 },
+  { src: Killua, match: false, id: 8 },
+  { src: Kunkle, match: false, id: 9 },
+  { src: Kurapika, match: false, id: 10 },
+  { src: Neferupitou, match: false, id: 11 },
+  { src: Netero, match: false, id: 12 },
+  { src: Silva, match: false, id: 13 },
+  { src: Uvogin, match: false, id: 14 },
+  { src: Yupi, match: false, id: 15 },
+  { src: Zeno, match: false, id: 16 },
 ];
 
 export const useMemoryGame = () => {
