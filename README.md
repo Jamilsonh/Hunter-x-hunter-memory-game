@@ -15,7 +15,8 @@ I developed this game to learn more about typescript and improve my programming 
 - <s>Split logic into custom hooks</s>
 - <s>Create the game logic</s>
 - <s>Create game card and main layout</s>
-- Styling the main page and game page
+- Styling the main page 
+- Styling the game page
 - Use styled-components for styling
 - Create control buttons (play, pause and restart)
 - Create timer
