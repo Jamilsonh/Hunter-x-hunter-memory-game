@@ -10,6 +10,7 @@ import {
   TitleContainerGame,
 } from './styles';
 import { Link, redirect } from 'react-router-dom';
+import AnimatedWallpaper from '../../utils/AnimateWallpaper';
 
 function Home() {
   const { changeDifficulty } = useContext(DifficultyContext);
@@ -22,6 +23,7 @@ function Home() {
 
   return (
     <Container>
+      <AnimatedWallpaper />
       <ContainerGame>
         <TitleContainerGame>Escolha a dificuldade</TitleContainerGame>
         <ContainerDifficulty>

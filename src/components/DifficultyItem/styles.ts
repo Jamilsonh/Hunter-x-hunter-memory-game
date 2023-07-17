@@ -19,7 +19,7 @@ export const Container = styled(NavLink)<{ isSelected: boolean }>`
   user-select: none;
   transition: transform 0.1s ease-in-out;
   text-decoration: none;
-  color: white;
+  color: black;
 
   &:hover {
     transform: translateY(-8px);
