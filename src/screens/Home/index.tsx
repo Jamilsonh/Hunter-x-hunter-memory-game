@@ -2,15 +2,7 @@ import { useContext } from 'react';
 import DificultyItem from '../../components/DifficultyItem';
 import Difficulties from '../../config/Difficulties';
 import { DifficultyContext } from '../../utils/DifficultyContext';
-import {
-  ButtonDifficulty,
-  Container,
-  ContainerDifficulty,
-  ContainerGame,
-  TitleContainerGame,
-} from './styles';
-import { Link, redirect } from 'react-router-dom';
-import AnimatedWallpaper from '../../utils/AnimateWallpaper';
+import { Container, ContainerDifficulty, ContainerGame } from './styles';
 
 function Home() {
   const { changeDifficulty } = useContext(DifficultyContext);
@@ -23,9 +15,7 @@ function Home() {
 
   return (
     <Container>
-      <AnimatedWallpaper />
       <ContainerGame>
-        <TitleContainerGame>Escolha a dificuldade</TitleContainerGame>
         <ContainerDifficulty>
           <DificultyItem
             name='Easy'

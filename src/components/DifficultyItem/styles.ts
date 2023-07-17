@@ -11,7 +11,7 @@ const ItemSelected = css`
 
 export const Container = styled(NavLink)<{ isSelected: boolean }>`
   padding: 8px 24px;
-  border-radius: 5px;
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,6 +20,9 @@ export const Container = styled(NavLink)<{ isSelected: boolean }>`
   transition: transform 0.1s ease-in-out;
   text-decoration: none;
   color: black;
+  border: 2px solid black;
+  width: 120px;
+  background-color: rgb(0, 0, 0, 0.3);
 
   &:hover {
     transform: translateY(-8px);
@@ -27,7 +30,9 @@ export const Container = styled(NavLink)<{ isSelected: boolean }>`
   }
 `;
 
-export const DificultyName = styled.div``;
+export const DificultyName = styled.div`
+  font-weight: bold;
+`;
 
 export const NumberOfCards = styled.div`
   font-size: 3.2rem;

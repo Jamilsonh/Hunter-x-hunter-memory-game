@@ -8,33 +8,32 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(${Wallpaper});
+  background-size: 105%;
   background-repeat: no-repeat;
-  background-size: cover;
 `;
 
 export const ContainerGame = styled.div`
   border: 1px solid red;
   border-radius: 25px;
-  height: 350px;
+  height: 400px;
   width: 800px;
   display: flex;
   flex-direction: column;
+  background-image: url(${Wallpaper});
   align-items: center;
-  justify-content: space-around;
-  background-color: rgb(255, 255, 255, 0.5);
-  margin-top: 250px;
+  justify-content: flex-end;
+  background-color: rgb(255, 255, 255, 0.7);
+  background-size: 105%;
+  background-position: 0 90%;
 `;
 
 export const ContainerDifficulty = styled.div`
-  height: 250px;
+  height: 150px;
   width: 90%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 `;
-
-export const TitleContainerGame = styled.h1``;
 
 export const ButtonDifficulty = styled.button`
   border: 1px solid red;
