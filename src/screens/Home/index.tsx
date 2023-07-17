@@ -29,10 +29,25 @@ function Home() {
           onClick={onSelectDifficulty(Difficulties.EASY)}
           //isSelected={selectedDifficulty === Difficulties.EASY}
         />
+        <DificultyItem
+          name='Medium'
+          numOfCards={Difficulties.MEDIUM}
+          onClick={onSelectDifficulty(Difficulties.MEDIUM)}
+          //isSelected={selectedDifficulty === Difficulties.EASY}
+        />
+        <DificultyItem
+          name='Medium'
+          numOfCards={Difficulties.MEDIUM}
+          onClick={onSelectDifficulty(Difficulties.HARD)}
+          //isSelected={selectedDifficulty === Difficulties.EASY}
+        />
+        <DificultyItem
+          name='Medium'
+          numOfCards={Difficulties.MEDIUM}
+          onClick={onSelectDifficulty(Difficulties.VERY_HARD)}
+          //isSelected={selectedDifficulty === Difficulties.EASY}
+        />
         <Link to='/game'>game</Link>
-        <ButtonDifficulty>Medium 24</ButtonDifficulty>
-        <ButtonDifficulty>Hard 30</ButtonDifficulty>
-        <ButtonDifficulty>Very Hard 36</ButtonDifficulty>
       </ContainerGame>
     </Container>
   );

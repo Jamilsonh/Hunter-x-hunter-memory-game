@@ -35,10 +35,10 @@ export const useMemoryGame = () => {
   const { difficulty } = useContext(DifficultyContext);
 
   let numOfCards = 0;
-  if (difficulty === 0) {
-    numOfCards = 12; // Fácil
-  } else if (difficulty === 1) {
-    numOfCards = 20; // Médio
+  if (difficulty === 6) {
+    numOfCards = 6; // Fácil
+  } else if (difficulty === 12) {
+    numOfCards = 12; // Médio
   } else if (difficulty === 2) {
     numOfCards = 28; // Difícil
   } else if (difficulty === 3) {
@@ -103,6 +103,7 @@ export const useMemoryGame = () => {
   // starting the game automatically
   useEffect(() => {
     shuffleCards();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
