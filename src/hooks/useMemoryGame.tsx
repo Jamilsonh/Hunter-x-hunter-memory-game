@@ -56,13 +56,13 @@ export const useMemoryGame = () => {
   const { difficulty } = useContext(DifficultyContext);
 
   let numOfCards = 0;
-  if (difficulty === 6) {
-    numOfCards = 6; // Fácil
-  } else if (difficulty === 12) {
-    numOfCards = 12; // Médio
-  } else if (difficulty === 2) {
-    numOfCards = 28; // Difícil
-  } else if (difficulty === 3) {
+  if (difficulty === 16) {
+    numOfCards = 16; // Fácil
+  } else if (difficulty === 20) {
+    numOfCards = 20; // Médio
+  } else if (difficulty === 24) {
+    numOfCards = 24; // Difícil
+  } else if (difficulty === 32) {
     numOfCards = 32; // Muito difícil
   }
 

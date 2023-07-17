@@ -8,6 +8,7 @@ interface SingleCardProps {
     src: string;
     match: boolean;
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleChoice: (card: any) => void;
   flipped: boolean;
   disabled: boolean;

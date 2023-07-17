@@ -1,6 +1,6 @@
 export default {
-  EASY: 6,
-  MEDIUM: 12,
-  HARD: 28,
+  EASY: 16,
+  MEDIUM: 20,
+  HARD: 24,
   VERY_HARD: 32,
 };

@@ -13,7 +13,12 @@ const DificultyItem: React.FC<DificultyItemProps> = (props) => {
   const { name, numOfCards, className, onClick, isSelected = false } = props;
 
   return (
-    <Container className={className} isSelected={isSelected} onClick={onClick}>
+    <Container
+      to='/game'
+      className={className}
+      isSelected={isSelected}
+      onClick={onClick}
+    >
       <DificultyName>{name}</DificultyName>
       <NumberOfCards>{numOfCards}</NumberOfCards>
     </Container>

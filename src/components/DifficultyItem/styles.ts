@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 //type CssType = FlattenInterpolation<ThemeProps<DefaultTheme>> | null
@@ -8,7 +9,7 @@ const ItemSelected = css`
   color: ${({ theme }): string => theme.background} !important;
 `*/
 
-export const Container = styled.div<{ isSelected: boolean }>`
+export const Container = styled(NavLink)<{ isSelected: boolean }>`
   padding: 8px 24px;
   border-radius: 5px;
   display: flex;
@@ -17,9 +18,12 @@ export const Container = styled.div<{ isSelected: boolean }>`
   cursor: pointer;
   user-select: none;
   transition: transform 0.1s ease-in-out;
+  text-decoration: none;
+  color: white;
 
   &:hover {
     transform: translateY(-8px);
+    color: red;
   }
 `;
 

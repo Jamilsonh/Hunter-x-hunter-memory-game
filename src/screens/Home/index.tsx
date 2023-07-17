@@ -5,10 +5,11 @@ import { DifficultyContext } from '../../utils/DifficultyContext';
 import {
   ButtonDifficulty,
   Container,
+  ContainerDifficulty,
   ContainerGame,
   TitleContainerGame,
 } from './styles';
-import { Link } from 'react-router-dom';
+import { Link, redirect } from 'react-router-dom';
 
 function Home() {
   const { changeDifficulty } = useContext(DifficultyContext);
@@ -23,31 +24,32 @@ function Home() {
     <Container>
       <ContainerGame>
         <TitleContainerGame>Escolha a dificuldade</TitleContainerGame>
-        <DificultyItem
-          name='Easy'
-          numOfCards={Difficulties.EASY}
-          onClick={onSelectDifficulty(Difficulties.EASY)}
-          //isSelected={selectedDifficulty === Difficulties.EASY}
-        />
-        <DificultyItem
-          name='Medium'
-          numOfCards={Difficulties.MEDIUM}
-          onClick={onSelectDifficulty(Difficulties.MEDIUM)}
-          //isSelected={selectedDifficulty === Difficulties.EASY}
-        />
-        <DificultyItem
-          name='Medium'
-          numOfCards={Difficulties.MEDIUM}
-          onClick={onSelectDifficulty(Difficulties.HARD)}
-          //isSelected={selectedDifficulty === Difficulties.EASY}
-        />
-        <DificultyItem
-          name='Medium'
-          numOfCards={Difficulties.MEDIUM}
-          onClick={onSelectDifficulty(Difficulties.VERY_HARD)}
-          //isSelected={selectedDifficulty === Difficulties.EASY}
-        />
-        <Link to='/game'>game</Link>
+        <ContainerDifficulty>
+          <DificultyItem
+            name='Easy'
+            numOfCards={Difficulties.EASY}
+            onClick={onSelectDifficulty(Difficulties.EASY)}
+            //isSelected={selectedDifficulty === Difficulties.EASY}
+          />
+          <DificultyItem
+            name='Medium'
+            numOfCards={Difficulties.MEDIUM}
+            onClick={onSelectDifficulty(Difficulties.MEDIUM)}
+            //isSelected={selectedDifficulty === Difficulties.EASY}
+          />
+          <DificultyItem
+            name='Hard'
+            numOfCards={Difficulties.HARD}
+            onClick={onSelectDifficulty(Difficulties.HARD)}
+            //isSelected={selectedDifficulty === Difficulties.EASY}
+          />
+          <DificultyItem
+            name='Very Hard'
+            numOfCards={Difficulties.VERY_HARD}
+            onClick={onSelectDifficulty(Difficulties.VERY_HARD)}
+            //isSelected={selectedDifficulty === Difficulties.EASY}
+          />
+        </ContainerDifficulty>
       </ContainerGame>
     </Container>
   );
