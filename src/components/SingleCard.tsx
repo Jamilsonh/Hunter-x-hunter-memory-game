@@ -1,7 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import './SingleCard.css';
 
-import cover from '../images/cover.png';
+import CardBack from '../images/Card-back.png';
+import {
+  BackImage,
+  Card,
+  FlippedContainer,
+  FrontImage,
+} from './SingleCardStyles';
 
 interface SingleCardProps {
   card: {
@@ -25,18 +32,12 @@ const SingleCard: React.FC<SingleCardProps> = ({
   };
 
   return (
-    <div className='card'>
-      <div className={flipped ? 'flipped' : ''}>
-        <img className='front' src={card.src} alt='card front' />
-        <img
-          className='back'
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          src={cover}
-          alt='card back'
-          onClick={handleClick}
-        />
-      </div>
-    </div>
+    <Card>
+      <FlippedContainer className={flipped ? 'flipped' : ''}>
+        <FrontImage src={card.src} alt='card front' />
+        <BackImage src={CardBack} alt='card back' onClick={handleClick} />
+      </FlippedContainer>
+    </Card>
   );
 };
 
