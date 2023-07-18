@@ -33,12 +33,11 @@ function Game() {
 
   return (
     <ContainerMain>
+      <TimerContainer>
+        <TimerText>{formatTime(timer)}</TimerText>
+        <TimerText>{turns}</TimerText>
+      </TimerContainer>
       <AppContainer>
-        <TimerContainer>
-          <TimerText>Time:</TimerText>
-          <TimerText>{formatTime(timer)}</TimerText>
-          <p>turns: {turns}</p>
-        </TimerContainer>
         <CardGrid columns={difficulty / 4}>
           {cards.map((card) => (
             <SingleCard
