@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { useMemoryGame } from '../../hooks/useMemoryGame';
 import { AppContainer, Button, CardGrid } from './styles';
 import { DifficultyContext } from '../../utils/DifficultyContext';
+import { Link } from 'react-router-dom';
 
 function Game() {
   const {
@@ -33,6 +34,7 @@ function Game() {
       </CardGrid>
       <div>
         <Button onClick={shuffleCards}>New Game</Button>
+        <Link to='/'>Voltar</Link>
         <p>turns: {turns}</p>
       </div>
     </AppContainer>
