@@ -5,10 +5,11 @@ export const Card = styled.div`
 `;
 
 export const CardImage = styled.img`
-  width: 170px;
+  width: 80%;
   display: block;
   border: 2px solid #fff;
   border-radius: 6px;
+  max-height: 170px;
 `;
 
 export const FrontImage = styled(CardImage)`

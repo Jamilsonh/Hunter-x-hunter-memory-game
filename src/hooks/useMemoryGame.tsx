@@ -82,10 +82,15 @@ export const useMemoryGame = () => {
     setChoiceTwo(null);
     setCards(shuffledCards);
     setTurn(0);
+    setTimer(0); // Resetting the timer
+    setIsPlaying(false); // Stopping the timer
   };
 
   // taking choices
   const handleChoice = (card: Card) => {
+    if (!isPlaying) {
+      return;
+    }
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
@@ -127,6 +132,45 @@ export const useMemoryGame = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Timer logic
+  const [timer, setTimer] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    let intervalId: number;
+
+    if (isPlaying) {
+      intervalId = setInterval(() => {
+        setTimer((prevTimer) => prevTimer + 1);
+      }, 1000);
+    }
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [isPlaying]);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+    setDisabled(false);
+  };
+
+  const handleRestart = () => {
+    setIsPlaying(false);
+    setTimer(0);
+    shuffleCards(); // Restarting the game
+  };
+
+  const formatTime = (time: number) => {
+    const hours = Math.floor(time / 3600);
+    const minutes = Math.floor((time % 3600) / 60);
+    const seconds = time % 60;
+
+    return `${hours.toString().padStart(2, '0')}:${minutes
+      .toString()
+      .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
   return {
     cards,
     turns,
@@ -135,5 +179,9 @@ export const useMemoryGame = () => {
     shuffleCards,
     choiceOne,
     choiceTwo,
+    handlePlay,
+    handleRestart,
+    timer,
+    formatTime,
   };
 };

@@ -2,9 +2,18 @@
 import SingleCard from '../../components/SingleCard';
 import { useContext } from 'react';
 import { useMemoryGame } from '../../hooks/useMemoryGame';
-import { AppContainer, Button, CardGrid } from './styles';
+import {
+  AppContainer,
+  Button,
+  ButtonVoltar,
+  CardGrid,
+  ContainerMain,
+  MenuContainer,
+  MenuSubContainer,
+  TimerContainer,
+  TimerText,
+} from './styles';
 import { DifficultyContext } from '../../utils/DifficultyContext';
-import { Link } from 'react-router-dom';
 
 function Game() {
   const {
@@ -12,32 +21,44 @@ function Game() {
     turns,
     handleChoice,
     disabled,
-    shuffleCards,
     choiceOne,
     choiceTwo,
+    handlePlay,
+    handleRestart,
+    timer,
+    formatTime,
   } = useMemoryGame();
 
   const { difficulty } = useContext(DifficultyContext);
 
   return (
-    <AppContainer>
-      <CardGrid columns={difficulty / 4}>
-        {cards.map((card) => (
-          <SingleCard
-            card={card}
-            handleChoice={handleChoice}
-            flipped={card === choiceOne || card === choiceTwo || card.match}
-            disabled={disabled}
-            key={card.id}
-          />
-        ))}
-      </CardGrid>
-      <div>
-        <Button onClick={shuffleCards}>New Game</Button>
-        <Link to='/'>Voltar</Link>
-        <p>turns: {turns}</p>
-      </div>
-    </AppContainer>
+    <ContainerMain>
+      <AppContainer>
+        <TimerContainer>
+          <TimerText>Time:</TimerText>
+          <TimerText>{formatTime(timer)}</TimerText>
+          <p>turns: {turns}</p>
+        </TimerContainer>
+        <CardGrid columns={difficulty / 4}>
+          {cards.map((card) => (
+            <SingleCard
+              card={card}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.match}
+              disabled={disabled}
+              key={card.id}
+            />
+          ))}
+        </CardGrid>
+      </AppContainer>
+      <MenuContainer>
+        <MenuSubContainer>
+          <Button onClick={handlePlay}>Play</Button>
+          <Button onClick={handleRestart}>Restart</Button>
+          <ButtonVoltar to='/'>Voltar</ButtonVoltar>
+        </MenuSubContainer>
+      </MenuContainer>
+    </ContainerMain>
   );
 }
 
