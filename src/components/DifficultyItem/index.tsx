@@ -10,15 +10,10 @@ export type DificultyItemProps = {
 };
 
 const DificultyItem: React.FC<DificultyItemProps> = (props) => {
-  const { name, numOfCards, className, onClick, isSelected = false } = props;
+  const { name, numOfCards, className, onClick } = props;
 
   return (
-    <Container
-      to='/game'
-      className={className}
-      isSelected={isSelected}
-      onClick={onClick}
-    >
+    <Container to='/game' className={className} onClick={onClick}>
       <DificultyName>{name}</DificultyName>
       <NumberOfCards>{numOfCards}</NumberOfCards>
     </Container>
